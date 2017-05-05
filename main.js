@@ -6,6 +6,13 @@ function installWithGumshoe (word) {
 chrome.contextMenus.create({
   id: 'install-with-gumshoe',
   title: "Install with Gumshoe.io",
-  contexts: ["selection"],
-  onclick: installWithGumshoe
+  onclick: installWithGumshoe,
+  contexts: ["selection"]
+});
+
+chrome.omnibox.onInputEntered.addListener(function (text) {
+  chrome.tabs.getSelected(null, function(tab) {
+    var url = 'https://gumshoe.io/?search=' + text;
+    chrome.tabs.update(tab.id, { url: url });
+  });
 });
