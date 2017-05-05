@@ -9,6 +9,9 @@
     "contextMenus", 
     "tabs"
   ],
+  "omnibox": {
+    "keyword": "gumshoe"
+  },
   "icons": {
     "16": "assets/icon@16px.png",
     "32": "assets/icon@32px.png",
