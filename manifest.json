@@ -3,7 +3,7 @@
   "name": "Gumshoe.io App Store",
   "short_name": "Gumshoe.io",
   "description": "Installs the selected code into your website via the Gumshoe.io App Store",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "minimum_chrome_version": "38",
   "permissions": [
     "contextMenus", 
@@ -18,5 +18,11 @@
     "64": "assets/icon@64px.png",
     "128": "assets/icon@128px.png"
   },
-  "background": { "page": "background.html" }
+  "background": { "page": "background.html" },
+   "content_scripts": [
+      { "matches": [ "http://*/*", "https://*/*" ],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ]
 }
